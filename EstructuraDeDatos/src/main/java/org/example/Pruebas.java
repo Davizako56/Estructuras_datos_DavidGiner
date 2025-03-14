@@ -1,38 +1,47 @@
 package org.example;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.TreeSet;
 
 public class Pruebas {
 
     public static void main(String[] args) {
 
-        Queue<Integer> cola = new ArrayBlockingQueue<>(2);
+        Set<Character> letras = new HashSet<>();
 
-        //cola.add(3);
-        //cola.add(8);
-        //cola.add(34);
+        letras.add('d');
+        letras.add('t');
+        letras.add('a');
+        letras.add('n');
+        letras.add('t');
 
-        Queue<Integer> cola2 = new LinkedList<>();
+        System.out.println(letras);
+        System.out.println("---------------");
 
-        cola2.offer(34);
-        cola2.offer(15);
-        cola2.offer(56);
+        Set<Character> letras_enlazadas = new LinkedHashSet<>();
 
-        System.out.println(cola2.poll());
-        System.out.println(cola2.peek());
+        letras_enlazadas.add('z');
+        letras_enlazadas.add('b');
+        letras_enlazadas.add('g');
 
-        System.out.println("-------------------");
+        System.out.println(letras_enlazadas.add('z'));
 
-        Deque<Integer> cola_doble = new LinkedList<>();
+        System.out.println(letras_enlazadas);
+        System.out.println("---------------");
 
-        cola_doble.offer(3);
-        cola_doble.offerFirst(6);
-        cola_doble.offerLast(10);
-        cola_doble.pollFirst();
-        cola_doble.pollLast();
+        Set<Character> letras_ordenadas = new TreeSet<>();
 
-        System.out.println(cola_doble);
+        letras_ordenadas.add('v');
+        letras_ordenadas.add('n');
+        letras_ordenadas.add('d');
+        letras_ordenadas.add('p');
+        letras_ordenadas.add('p');
+
+        System.out.println(letras_ordenadas);
+
+        letras_ordenadas.remove('n');
+
+        System.out.println(letras_ordenadas);
     }
 }
